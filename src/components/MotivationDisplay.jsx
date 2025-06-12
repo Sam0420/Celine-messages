@@ -16,7 +16,7 @@ const MotivationDisplay = () => {
 
   const showCelinesMessage = async () => {
     try {
-      const res = await fetch('https://raw.githubusercontent.com/Sam0420/celine-messages/main/celines-message.json');
+      const res = await fetch('https://your-motivation-api-project.vercel.app/api/generate');
       const data = await res.json();
       setMessage(`“${data.message}”`);
     } catch {
