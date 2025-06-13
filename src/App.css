@@ -1,87 +1,127 @@
+/* src/styles/index.css */
 body {
   margin: 0;
   font-family: 'Helvetica Neue', sans-serif;
-  background: #f3f6fb;
+  background: linear-gradient(to bottom, #dbeeff, #f3f8fd);
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
-  padding: 1rem;
+  overflow-x: hidden; /* only hides horizontal overflow */
 }
 
-
 .wrapper {
-  background-color: #ffffff;
+  /* fixed card dimensions */
+  width: 600px;
+  height: 400px;           /* <-- locked height */
+  background-color: #ffffffee;
   padding: 2.5rem;
   border-radius: 16px;
   box-shadow: 0 12px 24px rgba(0,0,0,0.08);
-  max-width: 480px;
-  width: 100%;
-  text-align: center;
-  transition: background 0.3s ease;
+  position: relative;
+  z-index: 2;
   box-sizing: border-box;
+  text-align: center;
+  overflow: hidden;        /* prevent inner shifts */
 }
 
 .title {
-  font-size: 2rem;
-  margin-bottom: 0.25rem;
-  color: #2e3b4e;
+  font-size: 2.25rem;
+  margin: 0;
+  color: #2a3d59;
+  font-weight: 600;
+  letter-spacing: 0.5px;
 }
 
 .subtitle {
-  font-size: 0.95rem;
-  color: #6e7a8a;
-  margin-bottom: 2rem;
+  font-size: 1rem;
+  color: #6a7b94;
+  margin: 0.25rem 0 1.5rem;
+}
+
+.message-container {
+  height: 130px;        /* fixed height to accommodate up to ~3 lines */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 1rem;
+  overflow: hidden;
 }
 
 
+.message {
+  margin: 0;
+  font-size: 1.2rem;
+  line-height: 1.6;
+  font-style: italic;
+  color: #3d3d3d;
+  opacity: 0;
+  animation: fadeIn 0.6s ease forwards;
+}
+
 @keyframes fadeIn {
-  to {
-    opacity: 1;
-  }
+  to { opacity: 1; }
 }
 
 .buttons {
   display: flex;
   gap: 1rem;
   justify-content: center;
-  flex-wrap: wrap;
+  margin-top: 1.5rem;
 }
 
 .main-btn {
-  background-color: #d7e3f4;
+  background-color: #cbdff2;
   border: none;
   padding: 0.75rem 1.25rem;
   font-size: 1rem;
-  border-radius: 8px;
+  border-radius: 10px;
   cursor: pointer;
-  color: #2e3b4e;
-  transition: background 0.2s ease;
+  color: #2a3d59;
+  transition: all 0.25s ease;
+  font-weight: 500;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
-
 .main-btn:hover {
-  background-color: #c5d7eb;
+  background-color: #b3d1ee;
+  transform: translateY(-1px);
+}
+ 
+.cloud {
+  position: absolute;
+  width: 100px;
+  height: auto;
+  animation: floatClouds 60s linear infinite;
+  z-index: 0;
 }
 
-.message {
-  font-size: 1.2rem;
-  color: #3d3d3d;
-  margin-bottom: 2rem;
-  line-height: 1.6;
-  font-style: italic;
-  opacity: 0;
-  animation: fadeIn 0.5s ease forwards;
-
-  /* ✅ New lines below */
-  min-height: 4.5rem; /* ~2 lines worth of text */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
+/* You can still randomize each cloud's position and speed */
+.cloud:nth-child(1) {
+  top: 10%;
+  left: -15%;
+  animation-duration: 70s;
 }
-.message-container {
-  min-height: 6rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+
+.cloud:nth-child(2) {
+  top: 30%;
+  left: -20%;
+  animation-duration: 90s;
+}
+
+.cloud:nth-child(3) {
+  top: 50%;
+  left: -10%;
+  animation-duration: 80s;
+}
+
+.cloud:nth-child(4) {
+  top: 65%;
+  left: -25%;
+  animation-duration: 100s;
+}
+
+.cloud:nth-child(5) {
+  top: 40%;
+  left: -18%;
+  animation-duration: 85s;
 }
