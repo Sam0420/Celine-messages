@@ -125,3 +125,39 @@ body {
   left: -18%;
   animation-duration: 85s;
 }
+
+@media (max-width: 640px) {
+  .wrapper {
+    width: 90%;
+    height: auto;
+    padding: 2rem 1.5rem;
+    border-radius: 12px;
+  }
+
+  .title {
+    font-size: 1.75rem;
+  }
+
+  .subtitle {
+    font-size: 0.95rem;
+  }
+
+  .message-container {
+    height: auto;
+    min-height: 120px;
+    padding: 0 0.5rem;
+  }
+
+  .message {
+    font-size: 1rem;
+  }
+
+  .main-btn {
+    font-size: 0.95rem;
+    padding: 0.65rem 1rem;
+  }
+
+  .cloud {
+    width: 80px;
+  }
+}
