@@ -1,163 +1,30 @@
-/* src/styles/index.css */
-body {
-  margin: 0;
-  font-family: 'Helvetica Neue', sans-serif;
-  background: linear-gradient(to bottom, #dbeeff, #f3f8fd);
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.celebration-container {
   height: 100vh;
-  overflow-x: hidden; /* only hides horizontal overflow */
-}
-
-.wrapper {
-  /* fixed card dimensions */
-  width: 600px;
-  height: 400px;           /* <-- locked height */
-  background-color: #ffffffee;
-  padding: 2.5rem;
-  border-radius: 16px;
-  box-shadow: 0 12px 24px rgba(0,0,0,0.08);
-  position: relative;
-  z-index: 2;
-  box-sizing: border-box;
-  text-align: center;
-  overflow: hidden;        /* prevent inner shifts */
-}
-
-.title {
-  font-size: 2.25rem;
-  margin: 0;
-  color: #2a3d59;
-  font-weight: 600;
-  letter-spacing: 0.5px;
-}
-
-.subtitle {
-  font-size: 1rem;
-  color: #6a7b94;
-  margin: 0.25rem 0 1.5rem;
-}
-
-.message-container {
-  height: 130px;        /* fixed height to accommodate up to ~3 lines */
+  width: 100vw;
+  background: linear-gradient(to top, #fdfbfb, #ebedee);
   display: flex;
+  justify-content: center;
   align-items: center;
-  justify-content: center;
-  padding: 0 1rem;
   overflow: hidden;
-}
-
-
-.message {
-  margin: 0;
-  font-size: 1.2rem;
-  line-height: 1.6;
-  font-style: italic;
-  color: #3d3d3d;
-  opacity: 0;
-  animation: fadeIn 0.6s ease forwards;
-}
-
-@keyframes fadeIn {
-  to { opacity: 1; }
-}
-
-.buttons {
-  display: flex;
-  gap: 1rem;
-  justify-content: center;
-  margin-top: 1.5rem;
-}
-
-.main-btn {
-  background-color: #cbdff2;
-  border: none;
-  padding: 0.75rem 1.25rem;
-  font-size: 1rem;
-  border-radius: 10px;
-  cursor: pointer;
-  color: #2a3d59;
-  transition: all 0.25s ease;
-  font-weight: 500;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-}
-.main-btn:hover {
-  background-color: #b3d1ee;
-  transform: translateY(-1px);
-}
- 
-.cloud {
-  position: absolute;
-  width: 100px;
-  height: auto;
-  animation: floatClouds 60s linear infinite;
+  position: relative;
   z-index: 0;
 }
 
-/* You can still randomize each cloud's position and speed */
-.cloud:nth-child(1) {
-  top: 10%;
-  left: -15%;
-  animation-duration: 70s;
+.celebration-text {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #2a3d59;
+  text-align: center;
+  animation: pop-in 0.6s ease-out forwards;
 }
 
-.cloud:nth-child(2) {
-  top: 30%;
-  left: -20%;
-  animation-duration: 90s;
-}
-
-.cloud:nth-child(3) {
-  top: 50%;
-  left: -10%;
-  animation-duration: 80s;
-}
-
-.cloud:nth-child(4) {
-  top: 65%;
-  left: -25%;
-  animation-duration: 100s;
-}
-
-.cloud:nth-child(5) {
-  top: 40%;
-  left: -18%;
-  animation-duration: 85s;
-}
-
-@media (max-width: 640px) {
-  .wrapper {
-    width: 90%;
-    height: auto;
-    padding: 2rem 1.5rem;
-    border-radius: 12px;
+@keyframes pop-in {
+  0% {
+    transform: scale(0.5);
+    opacity: 0;
   }
-
-  .title {
-    font-size: 1.75rem;
-  }
-
-  .subtitle {
-    font-size: 0.95rem;
-  }
-
-  .message-container {
-    height: auto;
-    min-height: 120px;
-    padding: 0 0.5rem;
-  }
-
-  .message {
-    font-size: 1rem;
-  }
-
-  .main-btn {
-    font-size: 0.95rem;
-    padding: 0.65rem 1rem;
-  }
-
-  .cloud {
-    width: 80px;
+  100% {
+    transform: scale(1);
+    opacity: 1;
   }
 }
